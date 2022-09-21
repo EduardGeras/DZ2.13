@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class DepartamentServiceImpl implements DepartamentService {
+public abstract class DepartamentServiceImpl implements DepartamentService {
     private final EmployeeServiceImpl employeeService;
 
     public DepartamentServiceImpl(EmployeeServiceImpl employeeService) {
@@ -46,6 +46,11 @@ public class DepartamentServiceImpl implements DepartamentService {
     }
     public List <Employee> allEmployees(){
         return new ArrayList<>(employeeService.getEmployees().values());
+    }
+
+    @Override
+    public Object getAll() {
+        return null;
     }
 }
 

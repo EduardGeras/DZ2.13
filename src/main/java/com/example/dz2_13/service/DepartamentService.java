@@ -11,4 +11,8 @@ public interface DepartamentService {
     Employee minSalary(int departament);
     List <Employee> departmentEmployees(int departament);
     List <Employee> allEmployees();
+
+    Object getAll();
+
+    Object getEmployees();
 }

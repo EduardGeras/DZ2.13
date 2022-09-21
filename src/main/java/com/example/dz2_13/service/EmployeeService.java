@@ -9,4 +9,5 @@ public interface EmployeeService {
     Employee delete(String firstName, String lastName, String patronymic);
     Employee find(String firstName, String lastName, String patronymic);
 
+    Object getAll();
 }

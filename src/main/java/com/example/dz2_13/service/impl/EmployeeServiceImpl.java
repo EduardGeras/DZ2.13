@@ -18,8 +18,8 @@ import java.util.Map;
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
     private static final int limit = 10;
-    public static Map<String, Employee> employees = new HashMap<>();
-    public static Map<String, Employee> getEmployees() {
+    public  Map<String, Employee> employees = new HashMap<>();
+    public Map<String, Employee> getEmployees() {
         return employees;
     }
     @Override
