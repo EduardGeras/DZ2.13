@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Map;
 
 import com.example.dz2_13.service.DepartamentService;
         import com.example.dz2_13.entity.Employee;
@@ -35,7 +36,7 @@ public class DepartamentController {
         return departamentService.departmentEmployees(department);
     }
     @GetMapping("/all")
-    public List <Employee> allEmployees() {
+    public Map<Integer,List<Employee>> allEmployees() {
         return departamentService.allEmployees();
     }
 }
