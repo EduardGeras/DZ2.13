@@ -3,6 +3,7 @@ package com.example.dz2_13.service;
 import com.example.dz2_13.entity.Employee;
 
 import java.util.List;
+import java.util.Map;
 
 public interface DepartamentService {
 
@@ -10,9 +11,6 @@ public interface DepartamentService {
 
     Employee minSalary(int departament);
     List <Employee> departmentEmployees(int departament);
-    List <Employee> allEmployees();
+    Map<Integer, List<Employee>> allEmployees();
 
-    Object getAll();
-
-    Object getEmployees();
 }

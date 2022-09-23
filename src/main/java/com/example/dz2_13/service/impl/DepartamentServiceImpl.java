@@ -5,13 +5,13 @@ import com.example.dz2_13.exceptions.EmployeeNotFoundException;
 import com.example.dz2_13.service.DepartamentService;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
-public abstract class DepartamentServiceImpl implements DepartamentService {
+public class DepartamentServiceImpl implements DepartamentService {
     private final EmployeeServiceImpl employeeService;
 
     public DepartamentServiceImpl(EmployeeServiceImpl employeeService) {
@@ -44,13 +44,10 @@ public abstract class DepartamentServiceImpl implements DepartamentService {
                 .filter(e -> e.getDepartament() == departament)
                 .collect(Collectors.toList());
     }
-    public List <Employee> allEmployees(){
-        return new ArrayList<>(employeeService.getEmployees().values());
+    public Map<Integer, List<Employee>> allEmployees(){
+        return employeeService.getEmployees().values().stream()
+                .collect(Collectors.groupingBy(Employee::getDepartament));
     }
 
-    @Override
-    public Object getAll() {
-        return null;
-    }
 }
 
